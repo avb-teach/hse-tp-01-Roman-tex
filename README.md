@@ -55,18 +55,16 @@
    		- 2b.txt
 
 - output_dir
-	- 1.txt
-	- depth2a
-		- 2a.txt
-		- depth3
-			- 3.txt
-			- depth4
-				- 4.txt
-	- depth3
-		- depth4
-			- 4.txt
-	- depth2b
-   		- 2b.txt
+		   - 1.txt
+		   - depth2a
+			   - 2a.txt
+			   - depth3
+				   - 3.txt
+		   - depth3
+			   - depth4
+				   - 4.txt
+		   - depth2b
+				  - 2b.txt
 
 ### Способ отправки
 
