@@ -4,7 +4,9 @@ SRC="$1"
 DST="$2"
 DEPTH=""
 
-if echo $3 | grep -q "^--max_depth="; then
+if [ "$3" = "--max_depth" ]; then
+  DEPTH="$4"
+elif echo "$3" | grep -q "^--max_depth="; then
   DEPTH=`echo $3 | cut -d'=' -f2`
 fi
 
@@ -16,4 +18,8 @@ fi
 
 g++ -std=c++17 -o run_collector collector_core.cpp
 
-./run_collector $SRC $DST $DEPTH
+if [ -n "$DEPTH" ]; then
+  ./run_collector $SRC "$DST" "$DEPTH"
+else
+  ./run_collector "$SRC" "$DST"
+fi
