@@ -39,8 +39,10 @@ void copyFiles(fs::path cur, fs::path baseIn, fs::path baseOut,
             vector<string> segs;
             splitPath(relDir, segs);
 
-            if (lim != -1 && (int)segs.size() > lim-1) {
-                segs.erase(segs.begin());
+            if (lim != -1) {
+                while ((int)segs.size() > lim - 1) {
+                    segs.erase(segs.begin());
+                }
             }
 
             fs::path dest = baseOut;
